@@ -3,8 +3,6 @@ module phudim(
     output reg [6:0] HEX2,
     output reg [6:0] HEX1,
     output reg [6:0] HEX0,
-    output [7:0] LEDG,
-    output [9:0] LEDR,
     input CLOCK_50,
     input [9:0] SW,
     input [3:0] KEY
