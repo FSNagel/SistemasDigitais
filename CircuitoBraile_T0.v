@@ -6,26 +6,40 @@ module Braile (
 	output [6:0] HEX2,
 	output [6:0] HEX3
 );
+	reg [4:0] TEMP1;
+	reg [4:0] TEMP2;
+	reg [4:0] TEMP3;
+	reg [4:0] TEMP4;
 
+select S1(TEMP1[4:0], HEX0);
+select S2(TEMP2[4:0], HEX1);
+select S3(TEMP3[4:0], HEX2);
+select S4(TEMP4[4:0], HEX3);
+
+always@ (KEY)
+begin
+		
 	if(KEY[0] == 0)
 	begin
-		select S1(SW[4:0], HEX0);
+		TEMP1[4:0] <= SW[4:0];
+		
 	end
 	
 	if(KEY[1] == 0)
 	begin
-		select S2(SW[4:0], HEX1);
+		TEMP2[4:0] <= SW[4:0];
 	end
 	
 	if(KEY[2] == 0)
 	begin
-		select S3(SW[4:0], HEX2);
+		TEMP3[4:0] <= SW[4:0];
 	end
 
 	if(KEY[3] == 0)
 	begin
-		select S4(SW[4:0], HEX3);
-	end		
+		TEMP4[4:0] <= SW[4:0];
+	end
+end		
 
 	
 
@@ -51,3 +65,4 @@ assign h[6] = x == 21 || x == 22 || x == 23 || x == 24 || x == 25 || x == 26;
 
 
 endmodule
+
