@@ -3,7 +3,7 @@ module phudim(
 	input [54:0] V1,
 	input [54:0] V2,
 	input [54:0] V3,
-	output[54:0] OUT
+	output[108:0] OUT
 );
 
 	reg [54:0] SAIDA = 0;
